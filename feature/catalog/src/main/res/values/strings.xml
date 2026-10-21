@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_title">Fragenkatalog</string>
+    <string name="catalog_back">Zurück</string>
+    <string name="catalog_search_placeholder">Fragen, Antworten, Kategorien, Tags</string>
+    <string name="catalog_search_clear">Suche leeren</string>
+    <string name="catalog_add">Frage hinzufügen</string>
+
+    <string name="catalog_filter_show">Filter anzeigen</string>
+    <string name="catalog_filter_hide">Filter ausblenden</string>
+    <string name="catalog_filter_categories">Kategorie</string>
+    <string name="catalog_filter_difficulties">Schwierigkeit</string>
+    <string name="catalog_filter_flagged">nur markierte</string>
+    <string name="catalog_filter_with_distractors">nur mit Falschantworten</string>
+    <string name="catalog_filter_reset">Filter zurücksetzen</string>
+    <string name="catalog_category_chip">%1$s %2$d</string>
+
+    <string name="catalog_sort_label">Sortierung</string>
+    <string name="catalog_sort_recent">zuletzt geändert</string>
+    <string name="catalog_sort_category">Kategorie</string>
+    <string name="catalog_sort_difficulty">Schwierigkeit</string>
+
+    <string name="catalog_match_count">%1$d Treffer</string>
+    <string name="catalog_difficulty_description">Schwierigkeit %1$d von 5</string>
+    <string name="catalog_flagged_description">Als fehlerhaft markiert</string>
+    <string name="catalog_distractors_description">%1$d Falschantworten vorhanden</string>
+
+    <string name="catalog_empty_title">Noch keine Fragen</string>
+    <string name="catalog_empty_text">Lege die erste Frage an oder importiere einen Katalog.</string>
+    <string name="catalog_no_results_title">Keine Treffer</string>
+    <string name="catalog_no_results_text">Kein Eintrag passt zu Suche und Filtern.</string>
+
+    <string name="catalog_deleted_snackbar">„%1$s“ gelöscht</string>
+    <string name="catalog_undo">Rückgängig</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_back">Zurück</string>
+    <string name="editor_save">Speichern</string>
+    <string name="editor_cancel">Abbrechen</string>
+
+    <string name="editor_title_new">Frage hinzufügen</string>
+    <string name="editor_title_edit">Frage bearbeiten</string>
+
+    <string name="editor_question_label">Frage</string>
+    <string name="editor_question_error">Die Frage darf nicht leer sein</string>
+    <string name="editor_answer_label">Antwort</string>
+    <string name="editor_answer_error">Die Antwort darf nicht leer sein</string>
+    <string name="editor_category_label">Kategorie</string>
+    <string name="editor_category_error">Die Kategorie darf nicht leer sein</string>
+    <string name="editor_category_suggestions">Vorhandene Kategorien</string>
+    <string name="editor_difficulty_label">Schwierigkeit</string>
+    <string name="editor_difficulty_value">Schwierigkeit %1$d von 5</string>
+    <string name="editor_tags_label">Tags</string>
+    <string name="editor_tags_placeholder">Tag eingeben und bestätigen</string>
+    <string name="editor_tag_add">Tag hinzufügen</string>
+    <string name="editor_tag_remove">Tag %1$s entfernen</string>
+    <string name="editor_flagged_title">Als fehlerhaft markieren</string>
+    <string name="editor_flagged_description">Taucht im Katalog unter „nur markierte“ auf</string>
+
+    <string name="editor_distractors_section">Falschantworten</string>
+    <string name="editor_distractors_section_count">Falschantworten · %1$d</string>
+    <string name="editor_distractors_hint">Werden im Modus „Der schmusigste fliegt“ nicht verwendet. Spätere Modi wie „Wer wird Millionär“ brauchen drei davon.</string>
+    <string name="editor_distractor_label">Falschantwort %1$d</string>
+    <string name="editor_distractor_add">Falschantwort hinzufügen</string>
+    <string name="editor_distractor_remove">Falschantwort %1$d entfernen</string>
+    <string name="editor_distractor_max">Mehr als %1$d Falschantworten speichert die App nicht</string>
+    <string name="editor_distractor_equals_answer">entspricht der richtigen Antwort</string>
+    <string name="editor_distractor_duplicate">schon vorhanden</string>
+    <string name="editor_distractors_expand">Abschnitt aufklappen</string>
+    <string name="editor_distractors_collapse">Abschnitt zuklappen</string>
+
+    <string name="editor_duplicate_title">Diese Frage existiert bereits</string>
+    <string name="editor_duplicate_text">„%1$s“ steht mit derselben Antwort schon im Katalog.</string>
+    <string name="editor_duplicate_save_anyway">Trotzdem speichern</string>
+
+    <string name="editor_delete_title">Frage löschen?</string>
+    <string name="editor_delete_text">Die Frage verschwindet aus Katalog und Spiel. Bis zum endgültigen Entfernen in den Einstellungen bleibt sie als Löschmarke in der Datenbank, damit der Geräte-Abgleich sie nicht zurückbringt.</string>
+    <string name="editor_delete_action">Löschen</string>
+
+    <string name="editor_save_failed">Speichern fehlgeschlagen</string>
+    <string name="editor_not_found">Diese Frage gibt es nicht mehr</string>
+</resources>

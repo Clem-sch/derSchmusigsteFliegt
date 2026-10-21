@@ -1,0 +1,24 @@
+{
+  "_hinweis": "Vorlage zum Befuellen. Felder, die die App nicht kennt - wie dieses hier - werden beim Lesen ignoriert. Pflicht sind nur question und answer; alles andere darf weg. Siehe FRAGEN-FORMAT.md.",
+  "questions": [
+    {
+      "question": "Wie heißt die Hauptstadt von Italien?",
+      "answer": "Rom",
+      "category": "Geografie",
+      "difficulty": 1,
+      "tags": ["hauptstädte", "europa"]
+    },
+    {
+      "question": "Wer schrieb die Erzählung „Die Verwandlung“?",
+      "answer": "Franz Kafka",
+      "category": "Literatur",
+      "difficulty": 3,
+      "tags": ["literatur", "klassiker"],
+      "distractors": ["Thomas Mann", "Hermann Hesse", "Robert Musil"]
+    },
+    {
+      "question": "Diese Frage hat nur das Pflichtprogramm. Kategorie wird „Allgemein“, Schwierigkeit 2.",
+      "answer": "Und das genügt."
+    }
+  ]
+}

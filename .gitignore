@@ -1,0 +1,104 @@
+# ──────────────────────────────────────────────────────────────
+#  Fragenkatalog — NICHT einchecken
+# ──────────────────────────────────────────────────────────────
+# Der grosse Katalog (1073 Fragen) bleibt lokal. Die Vorlage
+# (fragen-vorlage.json) und der kleine Demo-Seed unter
+# app/src/main/assets/seed/ sind bewusst NICHT ignoriert —
+# ohne den Seed startet die App nicht.
+fragen-der-duemmste-fliegt.json
+fragen-*.json
+!fragen-vorlage.json
+
+# Exporte / Backups des Katalogs
+fragen-export*.json
+*-fragen.json
+*fragenkatalog*
+/katalog/
+/fragen/
+
+# Gebaute APKs/AABs — enthalten den Katalog als Asset
+*.apk
+*.aab
+*.apks
+
+# ──────────────────────────────────────────────────────────────
+#  Persoenliche & sensible Daten
+# ──────────────────────────────────────────────────────────────
+# Enthaelt lokale SDK-Pfade samt Windows-Benutzernamen
+local.properties
+
+# Signing / Keystores
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+signing.properties
+key.properties
+
+# Secrets & API-Keys
+.env
+.env.*
+!.env.example
+secrets.properties
+*.secret
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+
+# ──────────────────────────────────────────────────────────────
+#  Gradle & Build
+# ──────────────────────────────────────────────────────────────
+.gradle/
+build/
+captures/
+.cxx/
+.kotlin/
+local.gradle
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# ──────────────────────────────────────────────────────────────
+#  Android Studio / IntelliJ
+# ──────────────────────────────────────────────────────────────
+*.iml
+.idea/
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+.navigation/
+output.json
+release/
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+lint/reports/
+
+# ──────────────────────────────────────────────────────────────
+#  Betriebssystem / OneDrive
+# ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*~
+*.swp
+.~lock.*
+
+# ──────────────────────────────────────────────────────────────
+#  Logs & Temporaeres
+# ──────────────────────────────────────────────────────────────
+*.log
+*.hprof
+*.stackdump
+/tmp/
+/temp/
+
+# Entwicklungs-Prompts / interne Notizen
+claude-code-prompt-quizapp.md
+claude-code-prompt-*.md

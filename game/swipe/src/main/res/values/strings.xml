@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="swipe_mode_name">Der schmusigste fliegt</string>
+
+    <!-- Setup, Schritt 1 -->
+    <string name="swipe_setup_title">Der schmusigste fliegt</string>
+    <string name="swipe_setup_step">Schritt %1$d von %2$d</string>
+    <string name="swipe_setup_back">Zurück</string>
+    <string name="swipe_setup_all">Alle</string>
+    <string name="swipe_setup_none">Keine</string>
+    <string name="swipe_setup_categories">Kategorien</string>
+    <string name="swipe_setup_difficulties">Schwierigkeit</string>
+    <string name="swipe_setup_difficulty_chip">%1$d</string>
+    <string name="swipe_setup_exclude_recent">Zuletzt gespielte Fragen ausschließen</string>
+    <string name="swipe_setup_exclude_recent_hint">Fragen, die in den letzten 24 Stunden dran waren</string>
+    <plurals name="swipe_setup_match_count">
+        <item quantity="one">%1$d Frage passt</item>
+        <item quantity="other">%1$d Fragen passen</item>
+    </plurals>
+    <string name="swipe_setup_no_category">keine Kategorie ausgewählt</string>
+    <string name="swipe_setup_no_difficulty">keine Schwierigkeit ausgewählt</string>
+    <string name="swipe_setup_no_match">keine Frage passt zu dieser Kombination</string>
+    <string name="swipe_setup_next">Weiter</string>
+    <string name="swipe_setup_empty_catalog_title">Keine Fragen im Katalog</string>
+    <string name="swipe_setup_empty_catalog_text">Lege zuerst Fragen an oder importiere einen Katalog, dann lässt sich eine Runde starten.</string>
+
+    <!-- Setup, Schritt 2 -->
+    <string name="swipe_timer_title">Timer</string>
+    <string name="swipe_timer_minutes">Minuten</string>
+    <string name="swipe_timer_seconds">Sekunden</string>
+    <string name="swipe_timer_minutes_value">%1$d Minuten</string>
+    <string name="swipe_timer_seconds_value">%1$d Sekunden</string>
+    <string name="swipe_timer_more">%1$s erhöhen</string>
+    <string name="swipe_timer_less">%1$s verringern</string>
+    <string name="swipe_timer_presets">Voreinstellungen</string>
+    <string name="swipe_timer_preset">%1$d Minuten</string>
+    <string name="swipe_timer_zero_hint">Bei 00:00 lässt sich keine Runde starten</string>
+    <string name="swipe_timer_start">Start</string>
+
+    <!-- Kartenphase -->
+    <string name="swipe_cards_remaining">%1$s</string>
+    <string name="swipe_cards_reveal">Antwort aufdecken</string>
+    <string name="swipe_cards_correct">Richtig</string>
+    <string name="swipe_cards_wrong">Falsch</string>
+    <string name="swipe_cards_skip">Überspringen</string>
+    <string name="swipe_cards_answered">%1$d gewertet</string>
+    <string name="swipe_cards_card_description">Frage: %1$s</string>
+    <string name="swipe_card_difficulty">Schwierigkeit %1$d von 5</string>
+    <string name="swipe_cards_out_of_questions_title">Keine Fragen mehr</string>
+    <string name="swipe_cards_out_of_questions_text">Die gefilterten Fragen sind aufgebraucht, bevor der Timer abgelaufen ist.</string>
+    <string name="swipe_cards_to_review">Zur Auswertung</string>
+    <string name="swipe_time_up">Zeit um</string>
+    <plurals name="swipe_time_up_hint">
+        <item quantity="one">%1$d Frage gewertet</item>
+        <item quantity="other">%1$d Fragen gewertet</item>
+    </plurals>
+
+    <string name="swipe_abort_title">Runde abbrechen?</string>
+    <string name="swipe_abort_text">Die bisherigen Wertungen bleiben erhalten, die Runde wird aber nicht ausgewertet.</string>
+    <string name="swipe_abort_confirm">Abbrechen</string>
+    <string name="swipe_abort_dismiss">Weiterspielen</string>
+
+    <!-- Review -->
+    <string name="swipe_review_title">Auswertung</string>
+    <string name="swipe_review_summary">%1$d richtig, %2$d falsch, %3$d übersprungen von %4$d Fragen</string>
+    <string name="swipe_review_verdict_correct">richtig</string>
+    <string name="swipe_review_verdict_wrong">falsch</string>
+    <string name="swipe_review_verdict_skipped">übersprungen</string>
+    <string name="swipe_review_verdict_toggle">Wertung umschalten, aktuell %1$s</string>
+    <string name="swipe_review_edit">Frage bearbeiten</string>
+    <string name="swipe_review_answer">Lösung: %1$s</string>
+    <string name="swipe_review_question_gone">Diese Frage wurde inzwischen gelöscht</string>
+    <string name="swipe_review_finish">Runde abschließen</string>
+    <string name="swipe_review_again">Neue Runde mit gleichen Einstellungen</string>
+    <string name="swipe_review_empty_title">Keine Wertungen</string>
+    <string name="swipe_review_empty_text">In dieser Runde wurde keine Frage gewertet.</string>
+</resources>

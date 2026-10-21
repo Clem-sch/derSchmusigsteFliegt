@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="transfer_title">Import / Export</string>
+    <string name="transfer_back">Zurück</string>
+    <string name="transfer_cancel">Abbrechen</string>
+    <string name="transfer_close">Schließen</string>
+    <string name="transfer_error_title">Import nicht möglich</string>
+
+    <string name="transfer_export_title">Katalog exportieren</string>
+    <string name="transfer_export_hint">Schreibt eine JSON-Datei mit allen Fragen, Löschmarken und Statistiken. Dieselbe Datei lässt sich wieder importieren – jeder Export ist damit ein prüfbares Backup und ein Abgleichspaket für ein zweites Gerät.</string>
+    <string name="transfer_export_action">Exportieren</string>
+    <string name="transfer_export_filter">Nur ausgewählte Kategorien</string>
+    <string name="transfer_export_filter_hint">Die Datei bleibt abgleichfähig, weil das Format identisch ist.</string>
+    <string name="transfer_export_done">Export geschrieben</string>
+
+    <string name="transfer_import_title">Katalog importieren</string>
+    <string name="transfer_import_hint">Die App rechnet den Import zuerst nur durch und zeigt das Ergebnis. Geschrieben wird erst nach Bestätigung – und davor legt sie ein internes Backup an.</string>
+    <string name="transfer_import_action">Datei auswählen</string>
+
+    <string name="transfer_mode_title">Importmodus</string>
+    <string name="transfer_mode_merge">Zusammenführen</string>
+    <string name="transfer_mode_merge_hint">Der Geräte-Abgleich. Fragen werden zusammengeführt, Statistiken der Datei ignoriert.</string>
+    <string name="transfer_mode_restore">Wiederherstellen</string>
+    <string name="transfer_mode_restore_hint">Ersetzt den gesamten lokalen Bestand durch die Datei, Statistiken inklusive.</string>
+    <string name="transfer_restore_warning_title">Bestand vollständig ersetzen?</string>
+    <string name="transfer_restore_warning_text">Wiederherstellen löscht alle %1$d lokalen Fragen und Statistiken und ersetzt sie durch den Inhalt der Datei. Das lässt sich nur über ein Backup zurückholen.</string>
+    <string name="transfer_restore_confirm">Ersetzen</string>
+
+    <string name="transfer_csv_title">Fragen aus Tabelle anlegen</string>
+    <string name="transfer_csv_hint">Spalten: question, answer, category, difficulty, tags. Kein Abgleichsformat – ohne IDs und Zeitstempel ist jede Zeile eine neue Frage.</string>
+    <string name="transfer_csv_action">Tabelle auswählen</string>
+
+    <string name="transfer_preview_title">Vorschau</string>
+    <string name="transfer_preview_nothing">Diese Datei würde nichts ändern.</string>
+    <string name="transfer_preview_confirm">Import ausführen</string>
+    <string name="transfer_preview_discard">Verwerfen</string>
+
+    <string name="transfer_count_inserted">neu</string>
+    <string name="transfer_count_unchanged">unverändert</string>
+    <string name="transfer_count_updated">aktualisiert</string>
+    <string name="transfer_count_deleted">gelöscht</string>
+    <string name="transfer_count_skipped">älter, übersprungen</string>
+    <string name="transfer_count_duplicates">Dubletten</string>
+    <string name="transfer_count_conflicts">Konflikte</string>
+    <string name="transfer_count_invalid">ungültig</string>
+    <string name="transfer_count_stats">Statistiken übernommen</string>
+
+    <string name="transfer_duplicate_entry">„%1$s“ – steht schon als „%2$s“ im Katalog</string>
+    <string name="transfer_invalid_entry">Zeile %1$d: %2$s</string>
+    <string name="transfer_invalid_empty_question">Frage ist leer</string>
+    <string name="transfer_invalid_empty_answer">Antwort ist leer</string>
+    <string name="transfer_invalid_empty_category">Kategorie ist leer</string>
+    <string name="transfer_invalid_difficulty">Schwierigkeit liegt nicht zwischen 1 und 5</string>
+    <string name="transfer_invalid_timestamp">Zeitstempel ist unlesbar</string>
+
+    <string name="transfer_notice_equal_to_answer">%1$d Falschantworten entsprachen der richtigen Antwort und wurden verworfen</string>
+    <string name="transfer_notice_duplicate">%1$d doppelte Falschantworten wurden zusammengefasst</string>
+    <string name="transfer_notice_empty">%1$d leere Falschantworten wurden entfernt</string>
+    <string name="transfer_notice_truncated">%1$d Falschantworten über dem Maximum wurden abgeschnitten</string>
+
+    <string name="transfer_report_title">Import abgeschlossen</string>
+    <string name="transfer_error_format">Die Datei ist kein gültiger Katalog: %1$s</string>
+    <string name="transfer_error_format_unknown">Die Datei ist kein gültiger Katalog.</string>
+    <string name="transfer_error_schema">Die Datei wurde mit einer neueren App-Version geschrieben (Format %1$d, unterstützt wird %2$d). Es wurde nichts geschrieben.</string>
+    <string name="transfer_error_io">Die Datei konnte nicht gelesen oder geschrieben werden.</string>
+    <string name="transfer_error_storage">Beim Schreiben ist ein Fehler aufgetreten. Es wurde nichts geändert.</string>
+</resources>

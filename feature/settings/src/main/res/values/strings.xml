@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_back">Zurück</string>
+    <string name="settings_cancel">Abbrechen</string>
+
+    <string name="settings_section_game">Spiel</string>
+    <string name="settings_answer_visibility">Antwort auf der Spielkarte</string>
+    <string name="settings_answer_immediate">Sofort sichtbar</string>
+    <string name="settings_answer_immediate_hint">Moderator-Betrieb: Frage und Lösung stehen zusammen auf der Karte</string>
+    <string name="settings_answer_on_tap">Erst nach Tap aufdecken</string>
+    <string name="settings_answer_on_tap_hint">Selbststudium: erst raten, dann aufdecken</string>
+
+    <string name="settings_default_timer">Standard-Timerdauer</string>
+    <string name="settings_default_timer_value">%1$s für neue Runden</string>
+    <string name="settings_timer_less">Eine Minute weniger</string>
+    <string name="settings_timer_more">Eine Minute mehr</string>
+
+    <string name="settings_section_appearance">Darstellung</string>
+    <string name="settings_theme">Erscheinungsbild</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Hell</string>
+    <string name="settings_theme_dark">Dunkel</string>
+
+    <string name="settings_section_data">Daten</string>
+    <string name="settings_purge_title">Gelöschte Fragen endgültig entfernen</string>
+    <plurals name="settings_purge_count">
+        <item quantity="one">%1$d Löschmarke in der Datenbank</item>
+        <item quantity="other">%1$d Löschmarken in der Datenbank</item>
+    </plurals>
+    <string name="settings_purge_none">Keine Löschmarken vorhanden</string>
+    <string name="settings_purge_action">Entfernen</string>
+    <string name="settings_purge_dialog_title">Löschmarken entfernen?</string>
+    <string name="settings_purge_dialog_text">Entfernt Löschmarken, die älter als %1$d Tage sind. Danach können alte Importdateien diese Fragen wieder einbringen, weil die Löschung nicht mehr in der Datenbank steht.</string>
+    <plurals name="settings_purge_done">
+        <item quantity="one">%1$d Löschmarke entfernt</item>
+        <item quantity="other">%1$d Löschmarken entfernt</item>
+    </plurals>
+
+    <string name="settings_backups_title">Interne Auto-Backups</string>
+    <string name="settings_backups_hint">Vor jedem Import legt die App hier einen vollständigen Export ab. Die letzten fünf bleiben erhalten.</string>
+    <string name="settings_backups_none">Noch keine Auto-Backups</string>
+    <string name="settings_backup_export">Exportieren</string>
+    <string name="settings_backup_entry">%1$s · %2$s</string>
+    <string name="settings_backup_exported">Backup exportiert</string>
+    <string name="settings_backup_failed">Export fehlgeschlagen</string>
+
+    <string name="settings_section_debug">Beispieldaten</string>
+    <string name="settings_seed_again">Beispielfragen erneut einspielen</string>
+    <string name="settings_seed_again_hint">Prüft, ob der Import idempotent ist: beim zweiten Mal muss der Bericht nur „unverändert“ melden.</string>
+    <string name="settings_seed_action">Einspielen</string>
+    <string name="settings_seed_result">%1$d neu, %2$d unverändert, %3$d aktualisiert</string>
+    <string name="settings_seed_failed">Beispielfragen konnten nicht eingespielt werden</string>
+</resources>
