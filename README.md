@@ -1,297 +1,234 @@
 # Der schmusigste fliegt
 
-Eine Android-App, die im Kern eine **Fragen-Datenbank mit austauschbaren Spiel-Frontends**
-ist. „Der schmusigste fliegt" ist der erste Konsument dieser Datenbank, nicht ihr Zweck.
+Eine Quiz-App für den Abend am Tisch. Du bist der Moderator, die App ist dein
+Fragen-Stapel mit Timer — wer dran ist und wer rausfliegt, entscheidet eure Runde selbst.
 
-Offline, ohne Konto, ohne Netzwerk: die App deklariert *keine* `INTERNET`-Permission und
-auch keine Storage-Permissions. Dateizugriff läuft ausschließlich über das Storage Access
-Framework.
-
-Die App kennt keine Spielernamen und eliminiert niemanden. Wer dran ist und wer fliegt,
-entscheiden die Spieler am Tisch — die App ist das Moderator-Werkzeug für den
-Fragen-Stack.
+**Komplett offline. Kein Konto, keine Anmeldung, keine Werbung.** Die App fragt nicht
+einmal nach einer Internet-Berechtigung, weil sie keine braucht.
 
 ---
 
-## Bauen
+## Installieren
 
-Voraussetzungen: JDK 17, Android SDK mit Platform 35 und Build-Tools 35.
+Die fertige App liegt als `DerSchmusigsteFliegt-1.0.apk` bereit.
+
+1. Datei auf dein Android-Gerät kopieren (USB, Cloud, E-Mail an dich selbst).
+2. Im Dateimanager antippen.
+3. Android fragt, ob du Apps aus dieser Quelle installieren willst → **Erlauben**.
+4. Installieren.
+
+Du brauchst Android 8 oder neuer. Die Warnung von Android ist normal: sie erscheint bei
+jeder App, die nicht aus dem Play Store kommt.
+
+---
+
+## Der erste Start
+
+Beim ersten Öffnen sind schon **10 Beispielfragen** drin, damit du gleich loslegen kannst.
+Du kannst sie behalten, löschen oder durch deinen eigenen Katalog ersetzen.
+
+Das Hauptmenü hat vier Einträge:
+
+| | |
+|---|---|
+| **Der schmusigste fliegt** | Runde starten |
+| **Fragenkatalog** | Suchen, bearbeiten, markieren |
+| **Frage hinzufügen** | Neue Frage anlegen |
+| **Import / Export** | Backup und Geräte-Abgleich |
+
+Oben siehst du immer, wie viele Fragen in wie vielen Kategorien du hast.
+
+---
+
+## Eine Runde spielen
+
+**Hauptmenü → Der schmusigste fliegt.** Dann in drei Schritten:
+
+**1. Kategorien wählen** — alle, oder nur „Geografie" und „Sport". Mit *Alle* / *Keine*
+schnell umschalten.
+
+**2. Schwierigkeit wählen** — 1 bis 5. Optional *Zuletzt gespielte Fragen ausschließen*:
+blendet alles aus, was in den letzten 24 Stunden schon dran war. Praktisch, wenn ihr
+mehrere Runden hintereinander spielt.
+
+Passt keine Frage zu deiner Kombination, sagt die App das sofort — du startest nie in eine
+leere Runde.
+
+**3. Timer stellen** — Minuten und Sekunden, oder eine der Voreinstellungen. **Start.**
+
+### Im Spiel
+
+Pro Karte steht die Frage, die Schwierigkeit und die Zahl der verbleibenden Karten. Dazu
+drei Knöpfe:
+
+- **Richtig**
+- **Falsch**
+- **Überspringen** — wenn die Frage nicht passt oder schon bekannt war
+
+Läuft der Timer ab, kommt *Zeit um*. Mit **Zur Auswertung** geht's weiter. Abbrechen
+kannst du jederzeit — die bisherigen Wertungen bleiben erhalten.
+
+### Auswertung
+
+Du bekommst die Zusammenfassung („7 richtig, 2 falsch, 1 übersprungen von 10 Fragen") und
+darunter jede Frage einzeln. Dort kannst du:
+
+- **Eine Wertung korrigieren** — antippen schaltet zwischen richtig / falsch /
+  übersprungen um. Falls ihr am Tisch doch anders entschieden habt.
+- **Die Frage direkt bearbeiten** — wenn ein Tippfehler oder eine falsche Lösung
+  aufgefallen ist.
+
+Dann **Runde abschließen**, oder **Neue Runde mit gleichen Einstellungen** für die nächste
+Runde ohne erneutes Einstellen.
+
+---
+
+## Eigene Fragen
+
+### Einzeln anlegen
+
+**Hauptmenü → Frage hinzufügen.** Pflicht sind nur **Frage**, **Antwort** und
+**Kategorie**. Dazu optional Schwierigkeit (1–5), Tags und Falschantworten.
+
+Bei der Kategorie schlägt die App dir vor, was du schon verwendest — so entstehen nicht
+versehentlich „Sport" und „sport" nebeneinander.
+
+Die **Falschantworten** braucht „Der schmusigste fliegt" nicht. Du kannst sie trotzdem
+schon eintragen; ein späterer Multiple-Choice-Modus würde sie nutzen.
+
+### Viele auf einmal
+
+Für größere Mengen lohnt eine Datei. Zwei Wege:
+
+**JSON** — das volle Format, auch zum Abgleich zwischen Geräten geeignet. Im Minimum
+reicht das:
+
+```json
+{ "questions": [ { "question": "Hauptstadt von Italien?", "answer": "Rom" } ] }
+```
+
+Alles Weitere beschreibt [`FRAGEN-FORMAT.md`](FRAGEN-FORMAT.md), eine Startdatei zum
+Befüllen liegt als [`fragen-vorlage.json`](fragen-vorlage.json) daneben.
+
+**Tabelle (CSV)** — Spalten `question, answer, category, difficulty, tags`. Gut, um Fragen
+in Excel oder Google Sheets zu sammeln. Achtung: Jede Zeile wird eine **neue** Frage, das
+ist kein Abgleich. Deshalb heißt es in der App „Fragen aus Tabelle anlegen".
+
+### Im Katalog suchen und aufräumen
+
+**Hauptmenü → Fragenkatalog.** Die Suche greift über Fragen, Antworten, Kategorien und
+Tags gleichzeitig. Filtern kannst du nach Kategorie, Schwierigkeit, *nur markierte* und
+*nur mit Falschantworten*; sortieren nach letzter Änderung, Kategorie oder Schwierigkeit.
+
+Fällt dir im Spiel ein Fehler auf, markiere die Frage als **fehlerhaft**. Später holst du
+im Katalog über den Filter *nur markierte* alle auf einmal hervor und korrigierst sie in
+Ruhe.
+
+---
+
+## Backup und zweites Gerät
+
+**Hauptmenü → Import / Export.**
+
+### Exportieren
+
+**Exportieren** schreibt eine JSON-Datei mit allen Fragen und Statistiken dorthin, wo du
+sie haben willst — Downloads, Google Drive, USB-Stick. Optional nur ausgewählte
+Kategorien.
+
+Diese Datei ist gleichzeitig dein **Backup** und dein **Abgleichspaket**: Die App liest
+exakt das Format, das sie schreibt.
+
+> **Mach das regelmäßig.** Deine Fragen liegen nur auf diesem Gerät. Geht das Handy
+> verloren, sind sie ohne Export weg.
+
+### Importieren
+
+Die App schreibt **nie sofort**. Sie rechnet den Import erst nur durch und zeigt dir, was
+passieren würde: *X neu, Y unverändert, Z aktualisiert, D Dubletten, I ungültig* — nach
+Kategorien aufklappbar. Erst wenn du bestätigst, wird geschrieben. Und davor legt sie
+automatisch ein internes Backup an.
+
+Zwei Modi:
+
+**Zusammenführen** (Standard) — der Weg fürs zweite Gerät. Beide Kataloge werden
+vereinigt, dieselbe Frage landet nicht doppelt. Eure Spielstatistiken bleiben dabei
+jeweils lokal, weil „12-mal gespielt" eine Eigenschaft *dieses* Geräts ist.
+
+**Wiederherstellen** — ersetzt deinen gesamten Bestand durch die Datei, Statistiken
+inklusive. Das ist der Weg zurück nach einem Datenverlust, nicht der Abgleich. Die App
+fragt hier ausdrücklich nach.
+
+### Zwei Geräte abgleichen
+
+1. Auf Gerät A exportieren.
+2. Datei zu Gerät B bringen.
+3. Auf B importieren mit **Zusammenführen**.
+4. Für die Gegenrichtung dasselbe umgekehrt.
+
+Kein Server, keine Anmeldung, kein Internet — nur eine Datei.
+
+### Automatische Backups
+
+Vor **jedem** Import legt die App selbst eine vollständige Sicherung an. Die letzten fünf
+findest du unter **Einstellungen → Interne Auto-Backups** und kannst sie von dort
+exportieren. Falls ein Import doch nicht das war, was du wolltest.
+
+---
+
+## Einstellungen
+
+**Antwort auf der Spielkarte**
+
+- *Sofort sichtbar* — Moderator-Betrieb: Frage und Lösung stehen zusammen auf der Karte.
+- *Erst nach Tap aufdecken* — Selbststudium: erst raten, dann aufdecken.
+
+**Standard-Timerdauer** für neue Runden.
+
+**Erscheinungsbild** — System, Hell oder Dunkel.
+
+**Beispielfragen erneut einspielen** — holt die 10 Startfragen zurück.
+
+**Gelöschte Fragen endgültig entfernen** — siehe unten.
+
+---
+
+## Gut zu wissen
+
+**Gelöschte Fragen sind erst „halb" gelöscht.** Die App merkt sich, dass du gelöscht
+hast — sonst würde ein älteres Backup die Frage beim nächsten Import wieder einschleppen.
+Diese Löschmarken kannst du in den Einstellungen endgültig entfernen; danach können alte
+Dateien die Fragen aber wieder mitbringen.
+
+**Die App kennt keine Spielernamen.** Sie zählt nicht mit, wer vorn liegt, und wirft
+niemanden raus. Das macht euer Tisch. Die App verwaltet den Fragen-Stapel und die Zeit.
+
+**Dieselbe Frage zweimal importieren ist unproblematisch.** Die App erkennt sie an
+Wortlaut und Antwort — Groß-/Kleinschreibung und zusätzliche Leerzeichen spielen keine
+Rolle — und legt sie nicht doppelt an.
+
+**Umlaute brauchen UTF-8.** Speicherst du eine eigene Datei in einer anderen Kodierung,
+werden ä/ö/ü zu Fragezeichen.
+
+---
+
+## Für Entwickler
+
+Die App ist ein Multi-Modul-Android-Projekt (Kotlin, Compose, Room, Hilt). Im Kern ist sie
+eine Fragen-Datenbank mit austauschbaren Spiel-Frontends — „Der schmusigste fliegt" ist
+der erste Spielmodus, nicht der Zweck.
+
+Bauen:
 
 ```bash
 ./gradlew assembleDebug
 ```
 
-```bash
-./gradlew test
-```
-
-Das Release-APK wird mit dem lokalen Debug-Schlüssel signiert, damit es ohne weitere
-Einrichtung installierbar ist. Für eine Veröffentlichung ist der `localRelease`-Block in
-`app/build.gradle.kts` durch einen eigenen Upload-Key zu ersetzen.
-
-```bash
-./gradlew assembleRelease
-```
-
----
-
-## Module
-
-Ein neuer Spielmodus muss ein neues Modul sein können, ohne bestehende anzufassen.
-
-| Modul | Inhalt |
-|---|---|
-| `:app` | Einstieg, Navigation-Graph, Hilt-Setup, Theme-Host, Hauptmenü |
-| `:core:model` | reine Datenklassen und Enums, keine Android-Abhängigkeit |
-| `:core:database` | Room: Entities, DAOs, FTS4-Index |
-| `:core:data` | Repository-Implementierungen, Mapper, Seed-Loader, DataStore |
-| `:core:designsystem` | Theme, Farben, Typografie, geteilte Composables |
-| `:core:sync` | Import/Export: Serializer, Parser, Merge-Engine, Report |
-| `:feature:catalog` | Katalog-Liste, Volltextsuche, Filter |
-| `:feature:editor` | Frage anlegen und bearbeiten (geteilt von Katalog und Review) |
-| `:feature:settings` | Einstellungen |
-| `:feature:transfer` | UI für Import/Export (SAF, Dry-Run-Vorschau, Report) |
-| `:game:api` | `GameMode`-Vertrag, Session-Repository, Warteschlange |
-| `:game:swipe` | Spielmodus „Der schmusigste fliegt" |
-
-### Abhängigkeitsregeln
-
-- `:core:model` hängt von nichts ab.
-- `:core:database` und `:core:sync` hängen nur von `:core:model` ab.
-- Feature- und Game-Module hängen **niemals** voneinander ab, nur auf `:core:*` und
-  `:game:api`.
-- Nur `:app` kennt alle Module.
-
-Diese Regeln sind **im Build erzwungen**, nicht nur dokumentiert: die Aufgabe
-`verifyModuleDependencies` in `build.gradle.kts` prüft sie, und `:app:preBuild` hängt von
-ihr ab. Ein verbotener `implementation(projects.…)` lässt den Build scheitern und nennt
-die Verletzung im Klartext.
-
-```bash
-./gradlew verifyModuleDependencies
-```
-
----
-
-## Dateiformat
-
-Es gibt **ein** kanonisches JSON-Format. Was die App exportiert, importiert sie ohne
-Konvertierung wieder. Jeder Export ist damit ein prüfbares Backup, und zwei Geräte können
-sich offline abgleichen, indem sie ihre Exportdateien austauschen.
-
-```json
-{
-  "schemaVersion": 1,
-  "exportedAt": "2026-10-16T10:00:00Z",
-  "source": "export",
-  "questions": [
-    {
-      "id": "df4ac376-4131-4bdd-b5a6-d83c5c1a1053",
-      "contentHash": "9ba4e1fc93f9bd174d35ffe27169485a910ccd8ea443409c04642cdc5ee360d8",
-      "question": "Wie heißt die Hauptstadt von Italien?",
-      "answer": "Rom",
-      "category": "Geografie",
-      "difficulty": 1,
-      "tags": ["hauptstädte", "europa"],
-      "distractors": [],
-      "flagged": false,
-      "createdAt": "2026-10-16T10:00:00Z",
-      "updatedAt": "2026-10-16T10:00:00Z",
-      "revision": 1,
-      "deletedAt": null
-    }
-  ],
-  "stats": []
-}
-```
-
-Beim **Lesen** sind alle Felder außer `question` und `answer` optional — eine Importdatei
-lässt sich von Hand schreiben:
-
-```json
-{ "questions": [ { "question": "Frage?", "answer": "Antwort" } ] }
-```
-
-Defaults: ID wird erzeugt, `contentHash` berechnet, Listen leer, `flagged=false`,
-Zeitstempel = jetzt, `revision=1`, `deletedAt=null`, Kategorie „Allgemein",
-Schwierigkeit 2. Unbekannte Felder werden ignoriert. Eine höhere `schemaVersion` als
-bekannt lehnt die App mit klarer Meldung ab und schreibt nichts.
-
-Beim **Schreiben** setzt die App alle Felder.
-
-### `contentHash`
-
-```
-normalize(s) = s.trim().lowercase().replace(Regex("\s+"), " ")
-hash         = sha256( normalize(question) + "\u0000" + normalize(answer) )
-```
-
-Der Hash dient der Dubletten-Erkennung bei Importdateien ohne verlässliche IDs, nicht als
-Primärschlüssel. `distractors` gehen bewusst **nicht** ein: zwei Fragen mit gleichem
-Wortlaut und gleicher Antwort sind Dubletten, auch wenn nur eine Falschantworten hat.
-
-Die Normalisierung ist in `:core:sync` genau einmal implementiert und per Unit-Test
-festgenagelt — ändert sie sich, erkennen zwei App-Versionen dieselbe Frage nicht mehr als
-Dublette.
-
-### Falschantworten (`distractors`)
-
-Gespeichert werden **ausschließlich die Falschantworten**; die richtige Antwort steht nur
-in `answer`. Ein künftiger Multiple-Choice-Modus baut seine Auswahlliste zur Laufzeit als
-`(answer + distractors).shuffled()`.
-
-Der naheliegende Gegenentwurf — alle vier Möglichkeiten in einer Liste, die richtige per
-Index markiert — erzeugt drei Fehlerquellen, die so gar nicht entstehen: die Antwort steht
-doppelt im Datensatz und kann auseinanderlaufen, der Index zeigt nach jedem Umsortieren
-auf das falsche Element, und ein importierter Index kann auf die falsche Zeile zeigen —
-still, bis der Modus Jahre später gebaut wird.
-
-Im Modus „Der schmusigste fliegt" werden sie nicht verwendet. Sie lassen sich aber schon
-erfassen, bearbeiten, exportieren und importieren, damit ein späterer Modus auf einen
-gefüllten Bestand trifft.
-
----
-
-## Import und Export
-
-### Export
-
-**Import / Export → Exportieren.** Die App schlägt `quizkatalog_<datum>_<zeit>.json` vor
-und schreibt über `ACTION_CREATE_DOCUMENT` dorthin, wo der Nutzer es möchte. Optional
-vorgefiltert nach Kategorien — die Datei bleibt abgleichfähig, weil das Format identisch
-ist. Löschmarken und Statistiken gehen mit.
-
-### Import
-
-Jeder Import läuft zweistufig:
-
-1. **Dry-Run:** Datei parsen, Merge rechnen, **nichts schreiben**, Ergebnis anzeigen —
-   *X neu, Y unverändert, Z aktualisiert, N gelöscht, D Dubletten, K Konflikte, I
-   ungültig*, mit aufklappbaren Listen je Kategorie.
-2. **Bestätigung** → vor dem Schreiben legt die App automatisch einen vollständigen
-   Export im App-internen Ordner ab (rollierend, die letzten fünf), dann läuft der Merge
-   in **einer** Transaktion.
-
-Zwei Modi:
-
-| Modus | Verhalten |
-|---|---|
-| **MERGE** (Standard) | Fragen werden zusammengeführt, `stats` wird **ignoriert**. Das ist der Geräte-Abgleich. |
-| **RESTORE** | Lokaler Bestand wird durch die Datei ersetzt, inklusive `stats`. Nur nach ausdrücklicher Bestätigung. Das ist die Wiederherstellung eines Backups. |
-
-Statistik wird im MERGE-Modus nicht angetastet: eine Frage ist geräteübergreifend
-dieselbe, „12-mal gespielt, 9-mal richtig" ist aber eine Eigenschaft *dieses* Geräts.
-Würde man sie mergen, wären die Zähler nach jedem Abgleich falsch.
-
-### Löschen und Löschmarken
-
-Löschen setzt `deletedAt` und erhöht `revision`; die Zeile bleibt in der Datenbank. Alle
-Abfragen für Katalog und Spiel filtern `deletedAt IS NULL`.
-
-Ohne diese Löschmarke propagiert eine Löschung beim Abgleich nicht, und jede ältere
-Backup-Datei spielt gelöschte Fragen wieder ein. In den Einstellungen lassen sich
-Löschmarken endgültig entfernen — mit dem Hinweis, dass danach alte Importdateien diese
-Fragen wieder einbringen können.
-
-### Fragen aus einer Tabelle anlegen
-
-`question,answer,category,difficulty,tags` als CSV. Ausdrücklich **kein**
-Abgleichsformat — ohne IDs und Zeitstempel ist jede Zeile eine neue Frage. In der UI heißt
-es darum „Fragen aus Tabelle anlegen", nicht „Import".
-
----
-
-## Beispielkatalog
-
-`app/src/main/assets/seed/seed-questions.json` wird beim **ersten Start** eingelesen,
-falls die Datenbank leer ist. Ein Flag in DataStore verhindert erneutes Einspielen, auch
-wenn der Nutzer alle Fragen löscht.
-
-Der Seed läuft **durch denselben Importpfad** wie ein Nutzer-Import (MERGE, ohne UI). Der
-erste Start ist damit ein echter Test der Parser- und Merge-Logik, und es gibt keinen
-zweiten, divergierenden Ladeweg. Keine vorgebaute `.db`-Datei via `createFromAsset`.
-
-In den Einstellungen gibt es „Beispielfragen erneut einspielen" — bequem zum Prüfen, dass
-der Import idempotent ist: beim zweiten Mal muss der Bericht *10 unverändert* melden und
-nichts einfügen.
-
----
-
-## Einen neuen Spielmodus anlegen
-
-`:game:api` ist das Scharnier:
-
-```kotlin
-interface GameMode {
-    val id: String
-    val displayName: String
-    /** Darf dieser Modus diese Frage ziehen? */
-    fun supports(question: Question): Boolean
-}
-```
-
-Die Fähigkeit wird **aus den Daten abgeleitet**, nicht als Feld deklariert — so können
-Deklaration und Inhalt nicht auseinanderlaufen. Ein Millionär-Modus implementiert
-`supports` als `question.distractors.size >= 3`.
-
-Schritte:
-
-1. **Neues Modul** `:game:<name>` anlegen und in `settings.gradle.kts` eintragen.
-2. **Abhängigkeitsregel** in `build.gradle.kts` ergänzen (`allowedModuleDependencies`) —
-   erlaubt sind `:core:model`, `:core:data`, `:core:designsystem` und `:game:api`.
-3. **`GameMode` implementieren** und per Multibinding registrieren. Der Anzeigename kommt
-   aus `strings.xml`, nicht aus dem Code:
-
-   ```kotlin
-   @Module
-   @InstallIn(SingletonComponent::class)
-   object MyModeModule {
-       @Provides @IntoSet @Singleton
-       fun provideMode(mode: MyGameMode): GameMode = mode
-   }
-   ```
-
-   Das Hauptmenü listet diese Menge — der neue Eintrag erscheint dort, ohne dass
-   `MainMenuViewModel` angefasst wird. Nur die Zuordnung „Modus-ID → Startroute" steht in
-   `SchmusigNavHost`.
-4. **Navigationsgraph** als `NavGraphBuilder`-Extension im eigenen Modul anbieten (siehe
-   `SwipeNavigation.kt`) und in `SchmusigNavHost` einhängen.
-5. **Fragen beziehen** über `QuestionRepository` und `SessionRepository`; `QuestionQueue`
-   aus `:game:api` erledigt das faule Nachladen. Nie direkt auf Room zugreifen — die
-   Abhängigkeitsprüfung verhindert es ohnehin.
-6. **`modeId` nie umbenennen.** Sie steht in `GameSession.modeId` in der Datenbank. Namen
-   dürfen sich ändern, Identifikatoren nicht.
-
----
-
-## Tests
+Tests:
 
 ```bash
 ./gradlew test
 ```
 
-Der Schwerpunkt liegt auf `:core:sync` — dem Teil, dessen Fehler stillschweigend Daten
-zerstören: Normalisierung und Hash, Round-Trip (Export → Parse → Merge ergibt feldweise
-denselben Bestand), Idempotenz, jede Merge-Regel einzeln, Statistik-Behandlung je Modus,
-Minimaldatei, Falschantworten-Regeln und kaputte Eingaben.
-
-Dazu DAO-Tests mit In-Memory-Room (Suche über Frage, Antwort, Kategorie und Tag,
-Filter, Löschmarken-Filterung, Index-Pflege) und ein Test der Rundenlogik: eine Korrektur
-der Wertung in der Auswertung wirkt korrekt auf den Statistik-Commit.
-
----
-
-## Architektur in zwei Sätzen
-
-Datenschicht und Spiellogik kennen sich nicht. Die Spielmodule lesen Fragen über eine
-Repository-Schnittstelle und schreiben Spielergebnisse zurück; sie wissen nichts über
-Room, Dateiformate oder Import, und der Katalog weiß nichts über Spielmodi.
-
-```
-Textdatei ──import──▶ Merge-Engine ──▶ Main-DB (Room/SQLite)
-                                          │
-                              ┌───────────┼───────────┐
-                              ▼           ▼           ▼
-                          Katalog     Spielmodus    Export
-                      (suchen/edit)   (Session)   (Backup/Sync)
-```
+Modulaufbau, Abhängigkeitsregeln, das kanonische Dateiformat, die Merge-Semantik und wie
+man einen eigenen Spielmodus anlegt: **[`ARCHITEKTUR.md`](ARCHITEKTUR.md)**.
